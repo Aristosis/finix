@@ -2,17 +2,14 @@
   "nodes": {
     "finix": {
       "locked": {
-        "lastModified": 1792367447,
-        "narHash": "sha256-x4trDiwJjtvdRgN3O8WkdHGz666z8F4PimRIrSGutqU=",
-        "owner": "aristosis",
-        "repo": "finixtosis",
-        "rev": "248dccab3db0cd4df887c7cabc664f57450c8547",
-        "type": "github"
+        "lastModified": 1792410117,
+        "narHash": "sha256-hyLoK0kmHMt3hr3EPzNX6Umr1FZo8iVaj/TdGT0v7v0=",
+        "path": "/home/ari/media/projects/finixtosis",
+        "type": "path"
       },
       "original": {
-        "owner": "aristosis",
-        "repo": "finixtosis",
-        "type": "github"
+        "path": "/home/ari/media/projects/finixtosis",
+        "type": "path"
       }
     },
     "nixpkgs": {

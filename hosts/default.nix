@@ -8,6 +8,7 @@
     nix-daemon
     limine
     sudo
+    zsh
     bash
   ];
 
@@ -45,6 +46,7 @@
     };
     sudo.enable = true;
     bash.enable = true;
+    zsh.enable = true;
   };
 
   environment.systemPackages = with pkgs; [

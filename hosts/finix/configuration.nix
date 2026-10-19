@@ -36,10 +36,12 @@
     seatd.enable = true;
   };
 
+  programs.zsh.enable = true;
+
   users.users."ari" = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "input" "render" "audio" "pipewire" config.services.seatd.group ];
-    # shell = pkgs.zsh;
+    shell = pkgs.zsh;
   };
 
   services.rtkit = {
