@@ -11,6 +11,10 @@ input {
     repeat-delay 300
   }
 
+  mouse {
+    accel-profile "flat"
+  }
+
   touchpad {
     tap
     natural-scroll
