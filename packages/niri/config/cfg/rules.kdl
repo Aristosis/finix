@@ -1,0 +1,20 @@
+window-rule {
+  clip-to-geometry true
+}
+
+layer-rule {
+  match namespace="awww-daemon"
+  place-within-backdrop true
+}
+
+overview {
+  workspace-shadow {
+    on
+  }
+}
+
+gestures {
+  hot-corners {
+    off
+  }
+}

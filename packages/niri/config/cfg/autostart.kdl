@@ -1,0 +1,3 @@
+spawn-sh-at-startup "kitty --start-as=hidden --single-instance -1" // headless kitty lmao
+spawn-sh-at-startup "wl-paste --watch cliphist store"
+spawn-sh-at-startup "awww-daemon"   // Wallpaper daemon

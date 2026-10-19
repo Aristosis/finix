@@ -1,0 +1,73 @@
+window-rule {
+  geometry-corner-radius 0
+
+  background-effect {
+    blur false
+  }
+}
+
+cursor {
+  xcursor-size 24
+  xcursor-theme "Bibata-Modern-Ice"
+}
+
+layout {
+  preset-window-heights {
+    proportion 0.33333
+    proportion 0.5
+    proportion 0.66667
+  }
+
+  struts {
+    left 16
+    right 16
+  }
+
+  gaps 0
+
+  background-color "transparent"
+
+  focus-ring {
+    off
+  }
+
+  border {
+    on
+    active-color   "#b2b2b2"
+    inactive-color "#000000"
+    urgent-color   "#ffb4ab"
+    width 1
+  }
+
+  tab-indicator {
+    place-within-column
+    length total-proportion=1.0
+    width 6
+    gap 0
+    position       "top"
+    active-color   "#b2b2b2"
+    inactive-color "#000000"
+    urgent-color   "#ffb4ab"
+  }
+
+  insert-hint {
+    color   "#ffffff"
+  }
+
+  center-focused-column "never"
+}
+
+animations {
+  // Slow down all animations by this factor. Values below 1 speed them up instead.
+  off
+  slowdown 0.7
+  window-open {
+    duration-ms 100
+    curve "ease-out-expo"
+  }
+  window-close {
+    duration-ms 100
+    curve "ease-out-quad"
+  }
+}
+

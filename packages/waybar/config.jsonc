@@ -1,0 +1,50 @@
+{
+    "spacing": 4,
+    "position": "bottom",
+    "modules-left": [
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "niri/window"
+    ],
+    "modules-right": [
+        "tray",
+        "wireplumber",
+        "cpu",
+        "memory",
+        "network",
+        "clock"
+    ],
+
+    "niri/window": {
+        "max-length": 40,
+        "icon": true,
+        "icon-size": 24
+    },
+    "wireplumber": {
+        "format": "Vol: {volume}%",
+        "format-muted": "-Muted-",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "on-click-middle": "helvum"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "interval": "60",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%d-%m-%Y}"
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+    },
+    "memory": {
+        "format": "MEM: {}%"
+    },
+    "network": {
+        "format-ethernet": "we nettin",
+        "format-disconnected": "no nettin ⚠"
+    }
+}

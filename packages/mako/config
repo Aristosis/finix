@@ -1,0 +1,18 @@
+background-color=#000000
+border-color=#b2b2b2
+default-timeout=5000
+font=Iosevka 14
+progress-color=over #b2b2b2
+text-color=#b2b2b2
+border-radius=2
+border-size=1
+
+[urgency=critical]
+background-color=#1c2023E6
+border-color=#c7ae95
+text-color=#c7ccd1
+
+[urgency=low]
+background-color=#1c2023E6
+border-color=#747c84
+text-color=#c7ccd1
