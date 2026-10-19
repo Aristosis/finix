@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
-    finix.url = "github:finix-community/finix";
+    finix.url = "github:aristosis/finixtosis";
   };
 
   outputs =
