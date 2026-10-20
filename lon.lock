@@ -1,0 +1,23 @@
+{
+  "version": "1",
+  "sources": {
+    "finix": {
+      "type": "Git",
+      "fetchType": "git",
+      "branch": "module/zsh",
+      "revision": "5bebfb102d5149a4964a3060b958bbaee3db66da",
+      "url": "https://github.com/aristosis/finixtosis",
+      "hash": "sha256-stx72dCDdrQpNgW4Rc+ynGCir6iaS+cI5N60KgRbaWU=",
+      "lastModified": 1792410219,
+      "submodules": false
+    },
+    "nixpkgs": {
+      "type": "Tarball",
+      "fetchType": "tarball",
+      "origin": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
+      "revision": "09063bd1f2b36fd9fd793c36dfade7bd40a93dfc",
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1095516.09063bd1f2b3/nixexprs.tar.zst?rev=09063bd1f2b36fd9fd793c36dfade7bd40a93dfc&lastModified=1792210252",
+      "hash": "sha256-EFOYkCb5ZNtbPx1NInawzi4y/6JRdHia0ag0CbJoMNY="
+    }
+  }
+}

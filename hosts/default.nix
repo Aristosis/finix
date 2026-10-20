@@ -8,6 +8,7 @@
     nix-daemon
     limine
     sudo
+    bash
     zsh
   ];
 
@@ -46,6 +47,7 @@
       settings.editor_enabled = true; # NOTE: Disable on systems that need security.
     };
     sudo.enable = true;
+    bash.enable = true;
     zsh.enable = true;
   };
 
