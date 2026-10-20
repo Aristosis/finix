@@ -17,7 +17,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         system = system;
-	config.allowUnfree = true;
+        config.allowUnfree = true;
       };
       localPkgs = import ./packages { inherit pkgs; };
     in
@@ -25,10 +25,12 @@
       packages.${system} = localPkgs;
 
       nixosConfigurations."finix" = finix.lib.finixSystem {
+
         inherit (pkgs) lib; # finix needs this
-	specialArgs = { inherit localPkgs; };
+
+        specialArgs = { inherit localPkgs; };
         modules = [
-	  { nixpkgs.pkgs = pkgs; }
+          { nixpkgs.pkgs = pkgs; }
           ./hosts/finix/configuration.nix
           ./hosts/default.nix
         ];
