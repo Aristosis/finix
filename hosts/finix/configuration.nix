@@ -13,9 +13,9 @@
     polkit
     getty # important
     dhcpcd
-    iwd
     gnome-keyring
 
+    # sessiond
     niri
     pipewire
     wireplumber
@@ -27,13 +27,14 @@
 
   services = {
     polkit.enable = true;
+    openssh.enable = true;
     sysklogd.enable = true;
     udev.enable = true;
     dhcpcd.enable = true;
-    iwd.enable = true;
     getty.enable = true;
     dbus.enable = true;
     seatd.enable = true;
+    sessiond.enable = true;
   };
 
   programs.zsh.enable = true;
