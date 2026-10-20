@@ -2,8 +2,8 @@
   "nodes": {
     "finix": {
       "locked": {
-        "lastModified": 1792410117,
-        "narHash": "sha256-hyLoK0kmHMt3hr3EPzNX6Umr1FZo8iVaj/TdGT0v7v0=",
+        "lastModified": 1792429085,
+        "narHash": "sha256-iCK9iXXJHxgnwPJgtpKV7WOQA5l3zlF/NUaweOGhKp4=",
         "path": "/home/ari/media/projects/finixtosis",
         "type": "path"
       },
