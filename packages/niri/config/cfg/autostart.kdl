@@ -1,14 +1,4 @@
-spawn-sh-at-startup "kitty --start-as=hidden --single-instance -1" // headless kitty lmao
+spawn-sh-at-startup "pipewire & sleep 0.5 && wireplumber & sleep 0.5 && pipewire-pulse &"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
-spawn-sh-at-startup "awww-daemon"   // Wallpaper daemon
-
-spawn-sh-at-startup "
-    pipewire &
-
-    until [ -S \"$XDG_RUNTIME_DIR/pipewire-0\" ]; do
-      sleep 0.1
-    done
-
-    wireplumber &
-    pipewire-pulse &
-"
+spawn-sh-at-startup "kitty --start-as=hidden --single-instance -1"
+spawn-sh-at-startup "swaybg"
