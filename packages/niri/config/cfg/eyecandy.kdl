@@ -18,10 +18,10 @@ layout {
     proportion 0.66667
   }
 
-  struts {
-    left 16
-    right 16
-  }
+  // struts {
+  //   left 16
+  //   right 16
+  // }
 
   gaps 0
 
