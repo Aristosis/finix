@@ -105,16 +105,21 @@
     localPkgs.mako-wrapped
     localPkgs.kitty-wrapped
     localPkgs.waybar-wrapped
-
     localPkgs.fzf-wrapped
+
+    man
+    tmux
     ripgrep
     fd
+    zoxide
 
-    awww
+    swaybg
     wl-clipboard
     cliphist
     xwayland-satellite
     firefox
+    obsidian
+    syncthing
   ];
 
   xdg = {
@@ -123,6 +128,7 @@
     mime.enable = true;
     portal = {
       enable = true;
+      # TODO: enable xdg desktop portals
       portals = with pkgs; [
         xdg-desktop-portal-gtk
         xdg-desktop-portal-gnome
