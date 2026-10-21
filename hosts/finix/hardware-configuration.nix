@@ -22,6 +22,12 @@
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
+
+    "/mnt/hdd" = {
+      device = "/dev/disk/by-label/HDD";
+      fsType = "ext4";
+      options = [ "defaults" "nofail" ];
+    };
   };
 
   swapDevices = [ ];
