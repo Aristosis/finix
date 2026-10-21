@@ -9,6 +9,7 @@
     limine
     sudo
     zsh
+    bash
   ];
 
   finit.runlevel = 3;
@@ -31,6 +32,7 @@
   services.nix-daemon = {
     enable = true;
     settings = {
+      nixPath = ["nixpkgs=flake:nixpkgs"];
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "@wheel" ];
 
@@ -43,10 +45,11 @@
   programs = {
     limine = {
       enable = true;
-      settings.editor_enabled = true; # NOTE: Disable on systems that need security.
+      settings.editor_enabled = true;
     };
     sudo.enable = true;
     zsh.enable = true;
+    bash.enable = true;
   };
 
   environment.systemPackages = with pkgs; [

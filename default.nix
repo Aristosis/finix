@@ -3,6 +3,7 @@ let
   finix = import sources.finix;
   pkgs = import sources.nixpkgs {
     config.allowUnfree = true;
+    flake.source = sources.nixpkgs;
   };
   localPkgs = import ./packages { inherit pkgs; };
 in
