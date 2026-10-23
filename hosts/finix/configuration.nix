@@ -85,6 +85,7 @@
     [preferred]
     default=gnome;gtk;
     org.freedesktop.impl.portal.FileChooser=gtk;
+    org.freedesktop.impl.portal.Secret=oo7-portal;
   '';
 
   environment.etc."xdg/xdg-desktop-portal-wlr/config".text = ''
@@ -139,7 +140,8 @@
     portal = {
       enable = true;
       portals = with pkgs; [
-        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gnome
+        oo7-portal
         xdg-desktop-portal-gtk
       ];
     };
