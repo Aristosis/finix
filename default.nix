@@ -10,7 +10,11 @@ in
 {
   desktop = finix.lib.finixSystem {
     inherit (pkgs) lib;
-    specialArgs = { inherit localPkgs; inherit pkgs; };
+    specialArgs = {
+      inherit localPkgs;
+      inherit pkgs;
+      inherit sources;
+    };
     modules = [
       ./hosts/default.nix
       ./hosts/finix/configuration.nix

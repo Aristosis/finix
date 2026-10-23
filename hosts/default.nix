@@ -1,4 +1,5 @@
 {
+  sources,
   modules,
   pkgs,
   ...
@@ -34,7 +35,22 @@
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "@wheel" ];
-
+      flake-registry = builtins.toFile "flake-registry.json" (builtins.toJSON {
+        version = 2;
+        flakes = [
+          {
+            from = {
+              id = "nixpkgs";
+              type = "indirect";
+            };
+            to = {
+              type = "path";
+              path = sources.nixpkgs;
+            };
+            exact = true;
+          }
+        ];
+      });
       # finix cache
       substituters = [ "https://finix.cachix.org" ];
       trusted-public-keys = [ "finix.cachix.org-1:0ejikHDeCp0UErsduUUHcg9IJczY2/h2e5132Z/As/c=" ];
