@@ -107,8 +107,6 @@
     localPkgs.waybar-wrapped
     localPkgs.fzf-wrapped
 
-    man
-    tmux
     ripgrep
     fd
     zoxide

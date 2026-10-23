@@ -51,13 +51,25 @@
     zsh.enable = true;
     bash.enable = true;
   };
+  environment = {
+    # man pages
+    pathsToLink = [ "/share/man" ];
 
-  environment.systemPackages = with pkgs; [
-    neovim
-    wget
-    git
-    iputils
-    iproute2
-    nixos-rebuild-ng
-  ];
+    variables = {
+      EDITOR = "nvim";
+      SUDO_EDITOR = "nvim";
+      VISUAL = "nvim";
+      PAGER = "nvim +Man!";
+    };
+
+    systemPackages = with pkgs; [
+      git
+      man
+      iproute2
+      iputils
+      neovim
+      nixos-rebuild-ng
+      tmux
+    ];
+  };
 }
