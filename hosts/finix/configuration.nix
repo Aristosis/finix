@@ -138,10 +138,9 @@
     mime.enable = true;
     portal = {
       enable = true;
-      # TODO: enable xdg desktop portals
       portals = with pkgs; [
+        xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
-        xdg-desktop-portal-gnome
       ];
     };
   };
