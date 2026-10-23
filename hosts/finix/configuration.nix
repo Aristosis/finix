@@ -81,6 +81,18 @@
     };
   };
 
+  environment.etc."xdg/xdg-desktop-portal/niri-portals.conf".text = ''
+    [preferred]
+    default=gnome;gtk;
+    org.freedesktop.impl.portal.FileChooser=gtk;
+  '';
+
+  environment.etc."xdg/xdg-desktop-portal-wlr/config".text = ''
+    [screencast]
+    chooser_type=dmenu
+    chooser_cmd=fuzzel --dmenu --prompt="Share: "
+  '';
+
   hardware = {
     graphics.enable = true;
     graphics.enable32Bit = true;
