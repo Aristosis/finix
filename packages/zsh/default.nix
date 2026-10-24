@@ -22,4 +22,5 @@ symlinkJoin {
       --set ZDOTDIR "${zdotdir}/config"
   '';
   meta.mainProgram = "zsh";
+  shellPath = "/bin/zsh";
 }

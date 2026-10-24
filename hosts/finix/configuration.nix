@@ -104,6 +104,7 @@
     firefox
     obsidian
     syncthing
+    steam-run
   ];
 
   xdg = {
