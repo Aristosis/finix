@@ -6,11 +6,12 @@ let
     flake.source = sources.nixpkgs;
   };
   localPkgs = import ./packages { inherit pkgs; };
+  localModules = ./modules;
 in
 {
   desktop = finix.lib.finixSystem {
     inherit (pkgs) lib;
-    specialArgs = { inherit localPkgs sources; };
+    specialArgs = { inherit sources localPkgs localModules; };
     modules = [
       { nixpkgs.pkgs = pkgs; }
       ./hosts/default.nix

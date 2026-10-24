@@ -1,12 +1,14 @@
 {
   config,
   modules,
+  localModules,
   pkgs,
   localPkgs,
   ...
 }:
 {
-  imports = with modules; [
+  imports = with modules;
+  [
     ./hardware-configuration.nix
     openssh
     sysklogd
@@ -15,12 +17,13 @@
     dhcpcd
     gnome-keyring
 
-    # sessiond
     niri
     pipewire
     wireplumber
     rtkit
     ly
+
+    (localModules + /niri.nix)
   ];
 
   networking.hostName = "finix";
@@ -82,25 +85,8 @@
     gnome-keyring.enable = true;
     pipewire.enable = true;
     wireplumber.enable = true;
-
-    niri = {
-      enable = true;
-      package = localPkgs.niri-wrapped;
-    };
   };
 
-  environment.etc."xdg/xdg-desktop-portal/niri-portals.conf".text = ''
-    [preferred]
-    default=gnome;gtk;
-    org.freedesktop.impl.portal.FileChooser=gtk;
-    org.freedesktop.impl.portal.Secret=oo7-portal;
-  '';
-
-  environment.etc."xdg/xdg-desktop-portal-wlr/config".text = ''
-    [screencast]
-    chooser_type=dmenu
-    chooser_cmd=fuzzel --dmenu --prompt="Share: "
-  '';
 
   hardware = {
     graphics.enable = true;
@@ -120,12 +106,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    localPkgs.fuzzel-character-picker
-    localPkgs.kitty-wrapped
-    localPkgs.fuzzel-wrapped
-    localPkgs.mako-wrapped
-    localPkgs.kitty-wrapped
-    localPkgs.waybar-wrapped
     localPkgs.fzf-wrapped
 
     ripgrep
@@ -146,13 +126,10 @@
     autostart.enable = true;
     icons.enable = true;
     mime.enable = true;
-    portal = {
-      enable = true;
-      portals = with pkgs; [
-        xdg-desktop-portal-gnome
-        oo7-portal
-        xdg-desktop-portal-gtk
-      ];
-    };
+    portal.enable = true;
+    portal.portals = with pkgs;
+    [
+      oo7-portal
+    ];
   };
 }
