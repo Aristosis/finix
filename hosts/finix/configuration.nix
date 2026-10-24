@@ -125,6 +125,7 @@
     zoxide
 
     swaybg
+    banana-cursor
     wl-clipboard
     cliphist
     xwayland-satellite

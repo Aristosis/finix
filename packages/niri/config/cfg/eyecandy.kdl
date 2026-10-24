@@ -8,7 +8,7 @@ window-rule {
 
 cursor {
   xcursor-size 24
-  xcursor-theme "Bibata-Modern-Ice"
+  xcursor-theme "Banana"
 }
 
 layout {
