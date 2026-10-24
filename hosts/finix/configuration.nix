@@ -24,6 +24,7 @@
     ly
 
     (localModules + /niri.nix)
+    (localModules + /fonts.nix)
   ];
 
   networking.hostName = "finix";
@@ -64,21 +65,6 @@
   services.ly = {
     enable = true;
     settings.session_log = ".local/state/ly-session.log";
-  };
-
-  fonts = {
-    enableDefaultPackages = true;
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        monospace = [ "Iosevka" ];
-      };
-    };
-    packages = with pkgs; [
-      inter
-      iosevka
-      nerd-fonts.symbols-only
-    ];
   };
 
   programs = {
