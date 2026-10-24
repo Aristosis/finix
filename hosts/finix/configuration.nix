@@ -105,6 +105,8 @@
     obsidian
     syncthing
     steam-run
+    mpv
+    gnutar
   ];
 
   xdg = {
