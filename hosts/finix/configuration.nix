@@ -15,7 +15,6 @@
     polkit
     getty # important
     dhcpcd
-    gnome-keyring
 
     niri
     pipewire
@@ -68,7 +67,6 @@
   };
 
   programs = {
-    gnome-keyring.enable = true;
     pipewire.enable = true;
     wireplumber.enable = true;
   };
