@@ -66,6 +66,7 @@
     zsh.enable = true;
     bash.enable = true;
   };
+  security.pam.environment.NIX_PATH.default = "flake:nixpkgs";
   environment = {
     # man pages
     pathsToLink = [ "/share/man" ];
@@ -74,7 +75,7 @@
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
       VISUAL = "nvim";
-      PAGER = "nvim +Man!";
+      MANPAGER = "nvim +Man!";
     };
 
     systemPackages = with pkgs; [
