@@ -4,18 +4,24 @@
 }:
 
 {
-  fonts = {
+  fonts =
+  with pkgs;
+  let
+    monospace = pkgs.iosevka;
+    sansSerif = pkgs.inter;
+  in
+  {
     enableDefaultPackages = true;
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "Iosevka" ];
-        sans-serif = [ "Inter" ];
+        monospace = [ monospace.pname ];
+        sansSerif = [ sansSerif.pname ];
       };
     };
     packages = with pkgs; [
-      inter
-      iosevka
+      monospace
+      sansSerif
       nerd-fonts.symbols-only
     ];
   };
