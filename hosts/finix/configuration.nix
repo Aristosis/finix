@@ -41,13 +41,21 @@
 
   users.users."ari" = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "input" "render" "audio" "pipewire" config.services.seatd.group ];
+    extraGroups = [
+      "wheel"
+      "video"
+      "input"
+      "render"
+      "audio"
+      "pipewire"
+      config.services.seatd.group
+    ];
     shell = pkgs.zsh;
   };
 
   services.rtkit = {
     enable = true;
-    extraGroups = [config.services.seatd.group];
+    extraGroups = [ config.services.seatd.group ];
   };
 
   services.ly = {
@@ -60,7 +68,7 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-	monospace = ["Iosevka"];
+        monospace = [ "Iosevka" ];
       };
     };
     packages = with pkgs; [
