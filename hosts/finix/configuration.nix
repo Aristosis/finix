@@ -69,12 +69,24 @@
       "mako".source = "${self}/config/mako";
       "niri".source = "${self}/config/niri";
       "waybar".source = "${self}/config/waybar";
+      "user-dirs.dirs".text = ''
+        XDG_DESKTOP_DIR="$HOME/media/hdd/Desktop"
+        XDG_DOWNLOAD_DIR="$HOME/media/downloads"
+        XDG_DOCUMENTS_DIR="$HOME/media/hdd/documents"
+        XDG_MUSIC_DIR="$HOME/media/hdd/music"
+        XDG_PICTURES_DIR="$HOME/media/hdd/pictures"
+        XDG_VIDEOS_DIR="$HOME/media/hdd/videos"
+        XDG_PROJECTS_DIR="$HOME/media/projects"
+        XDG_TEMPLATES_DIR="/dev/null"
+        XDG_PUBLICSHARE_DIR="/dev/null"
+      '';
     };
     files.".zshrc".text = (builtins.readFile "${self}/config/zsh/zshrc") +
     ''
       source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
     '';
+
   };
 
   services.rtkit = {
