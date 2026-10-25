@@ -1,4 +1,8 @@
+autoload -U compinit
+compinit
+
 FINIX_CONFIG="$HOME/media/projects/finix"
+
 alias -- nrs="sudo nixos-rebuild switch -f $FINIX_CONFIG -A desktop";
 alias -- vi="nvim";
 alias -- l="ls -l";
