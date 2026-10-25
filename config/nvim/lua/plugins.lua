@@ -31,7 +31,6 @@ snippets.setup {
    },
    snippets = {
       snippets.gen_loader.from_lang(),
-      { prefix = "" }
    }
 }
 
