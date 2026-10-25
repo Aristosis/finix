@@ -58,11 +58,19 @@
   };
 
 
+  # "${self}/config/nvim" - string
+  # self + "/config/nvim" - path
   hjem.users.ari = {
     user = "ari";
     xdg.config.files = {
       "nvim".source = "${self}/config/nvim";
+      "fuzzel".source = "${self}/config/fuzzel";
+      "kitty".source = "${self}/config/kitty";
+      "mako".source = "${self}/config/mako";
+      "niri".source = "${self}/config/niri";
+      "waybar".source = "${self}/config/waybar";
     };
+    files.".zshrc".source = "${self}/config/zsh/zshrc";
   };
 
   services.rtkit = {
@@ -99,17 +107,10 @@
   };
 
   environment.systemPackages = with pkgs; [
-    localPkgs.fzf-wrapped
-
     ripgrep
     fd
     zoxide
 
-    swaybg
-    banana-cursor
-    wl-clipboard
-    cliphist
-    xwayland-satellite
     firefox
     obsidian
     syncthing

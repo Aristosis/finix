@@ -1,0 +1,22 @@
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+input {
+  keyboard {
+    xkb {
+      layout "us"
+      variant "colemak"
+    }
+    numlock
+    repeat-rate 30
+    repeat-delay 300
+  }
+
+  mouse {
+    accel-profile "flat"
+  }
+
+  touchpad {
+    tap
+    natural-scroll
+  }
+}

@@ -1,0 +1,50 @@
+* {
+  font-family: "Iosevka Extended";
+  font-size: 14px;
+  border-radius: 0;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+#workspaces button {
+  min-height: 0;
+  min-width: 0;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+}
+
+#workspaces button.active {
+  border-bottom: 2px solid white;
+}
+
+#wireplumber {
+  color: pink;
+  border-bottom: 2px solid pink;
+}
+
+#cpu {
+  color: red;
+  border-bottom: 2px solid red;
+}
+
+#memory {
+  color: orange;
+  border-bottom: 2px solid orange;
+}
+
+#memory {
+  color: orange;
+  border-bottom: 2px solid orange;
+}
+
+#network {
+  color: cyan;
+  border-bottom: 2px solid cyan;
+}
+
+#clock {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}

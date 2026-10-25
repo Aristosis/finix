@@ -4,18 +4,17 @@
   ...
 }:
 {
-  programs.niri = {
-    enable = true;
-    package = localPkgs.niri-wrapped;
-  };
+  programs.niri.enable = true;
 
   environment.systemPackages = with pkgs; with localPkgs;
   [
     fuzzel-character-picker
-    fuzzel-wrapped
-    kitty-wrapped
-    mako-wrapped
-    waybar-wrapped
+    fuzzel
+    kitty
+    mako
+    waybar
+    swaybg
+    banana-cursor
 
     banana-cursor
     cliphist

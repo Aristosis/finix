@@ -1,0 +1,41 @@
+include "./cfg/eyecandy.kdl"
+include "./cfg/autostart.kdl"
+include "./cfg/input.kdl"
+include "./cfg/keybinds.kdl"
+include "./cfg/rules.kdl"
+
+prefer-no-csd
+screenshot-path "~/media/hdd/pictures/screenshots/"
+
+
+// OUTPUTS
+output "HDMI-A-3" {
+  mode "1920x1080@100"
+}
+
+output "HDMI-A-2" {
+  mode "1920x1080@100"
+}
+
+output "HDMI-A-1" {
+  mode "1920x1080@100"
+}
+
+
+input {
+  keyboard {
+    xkb {
+      layout "us"
+      variant "colemak"
+    }
+  }
+}
+
+environment {
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+  NVD_BACKEND "direct"
+  __NV_PRIME_RENDER_OFFLOAD "1"
+  __GLX_VENDOR_LIBRARY_NAME "nvidia"
+  GBM_BACKEND "nvidia-drm"
+}
+

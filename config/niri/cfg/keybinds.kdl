@@ -1,0 +1,99 @@
+binds {
+  MOD+SHIFT+ESCAPE                    { show-hotkey-overlay; }
+
+  MOD+SHIFT+RETURN                    repeat=false hotkey-overlay-title="Terminal: Kitty" { spawn-sh "kitty -1"; }
+  MOD+RETURN                          repeat=false hotkey-overlay-title="App Launcher: Fuzzel" repeat=false { spawn "fuzzel"; }
+  MOD+B                               repeat=false hotkey-overlay-title="Browser: Librewolf" repeat=false { spawn "librewolf"; }
+  MOD+V                               repeat=false hotkey-overlay-title="Clipboard: Fuzzel" repeat=false { spawn-sh "cliphist-fuzzel-img"; }
+  MOD+PERIOD                          repeat=false hotkey-overlay-title="Pick emojis: Fuzzel" repeat=false { spawn-sh "fuzzel-character-picker emoji"; }
+  MOD+COMMA                           repeat=false hotkey-overlay-title="Pick nerd font icons: Fuzzel" repeat=false { spawn-sh "fuzzel-character-picker nerd-icons"; }
+  MOD+SLASH                           repeat=false hotkey-overlay-title="Pick unicode symbols: Fuzzel" repeat=false { spawn-sh "fuzzel-character-picker unicode"; }
+  MOD+SHIFT+Q                         repeat=false { close-window; }
+
+  XF86AUDIORAISEVOLUME                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_SINK@ 5%+"; }
+  XF86AUDIOLOWERVOLUME                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_SINK@ 5%-"; }
+  XF86AUDIOMUTE                       allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_SINK@ toggle"; }
+  XF86AUDIOMICMUTE                    allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_SOURCE@ toggle"; }
+  XF86MONBRIGHTNESSUP                 allow-when-locked=true { spawn-sh "brightnessctl set +5"; }
+  XF86MONBRIGHTNESSDOWN               allow-when-locked=true { spawn-sh "brightnessctl set -5"; }
+
+  MOD+H                               { focus-column-left; }
+  MOD+L                               { focus-column-right; }
+  MOD+K                               { focus-window-up; }
+  MOD+J                               { focus-window-down; }
+
+  MOD+CTRL+H                          { move-column-left; }
+  MOD+CTRL+L                          { move-column-right; }
+  MOD+CTRL+K                          { move-window-up; }
+  MOD+CTRL+J                          { move-window-down; }
+
+  MOD+ALT+K                          { move-workspace-up; }
+  MOD+ALT+J                          { move-workspace-down; }
+
+  Mod+BracketLeft                     { consume-or-expel-window-left; }
+  Mod+BracketRight                    { consume-or-expel-window-right; }
+
+  MOD+HOME                            { focus-column-first; }
+  MOD+END                             { focus-column-last; }
+  MOD+CTRL+HOME                       { move-column-to-first; }
+  MOD+CTRL+END                        { move-column-to-last; }
+
+  MOD+SPACE                           { switch-focus-between-floating-and-tiling; }
+  MOD+SHIFT+SPACE                     { toggle-window-floating; }
+
+  MOD+WHEELSCROLLDOWN                 cooldown-ms=150 { focus-workspace-down; }
+  MOD+WHEELSCROLLUP                   cooldown-ms=150 { focus-workspace-up; }
+  MOD+CTRL+WHEELSCROLLDOWN            cooldown-ms=150 { move-column-to-workspace-down; }
+  MOD+CTRL+WHEELSCROLLUP              cooldown-ms=150 { move-column-to-workspace-up; }
+
+  MOD+WHEELSCROLLRIGHT                { focus-column-right; }
+  MOD+WHEELSCROLLLEFT                 { focus-column-left; }
+  MOD+CTRL+WHEELSCROLLRIGHT           { move-column-right; }
+  MOD+CTRL+WHEELSCROLLLEFT            { move-column-left; }
+
+  MOD+SHIFT+WHEELSCROLLDOWN           { focus-column-right; }
+  MOD+SHIFT+WHEELSCROLLUP             { focus-column-left; }
+  MOD+CTRL+SHIFT+WHEELSCROLLDOWN      { move-column-right; }
+  MOD+CTRL+SHIFT+WHEELSCROLLUP        { move-column-left; }
+
+  MOD+1                               { focus-workspace 1; }
+  MOD+2                               { focus-workspace 2; }
+  MOD+3                               { focus-workspace 3; }
+  MOD+4                               { focus-workspace 4; }
+  MOD+5                               { focus-workspace 5; }
+  MOD+6                               { focus-workspace 6; }
+  MOD+7                               { focus-workspace 7; }
+  MOD+8                               { focus-workspace 8; }
+  MOD+9                               { focus-workspace 9; }
+
+  MOD+CTRL+1                          { move-column-to-workspace 1; }
+  MOD+CTRL+2                          { move-column-to-workspace 2; }
+  MOD+CTRL+3                          { move-column-to-workspace 3; }
+  MOD+CTRL+4                          { move-column-to-workspace 4; }
+  MOD+CTRL+5                          { move-column-to-workspace 5; }
+  MOD+CTRL+6                          { move-column-to-workspace 6; }
+  MOD+CTRL+7                          { move-column-to-workspace 7; }
+  MOD+CTRL+8                          { move-column-to-workspace 8; }
+  MOD+CTRL+9                          { move-column-to-workspace 9; }
+
+  MOD+TAB                             { focus-workspace-previous; }
+
+  MOD+R                               { switch-preset-column-width; }
+  MOD+SHIFT+R                         { switch-preset-column-width-back; }
+  MOD+F                               { maximize-window-to-edges; }
+  MOD+C                               { center-column; }
+  MOD+CTRL+C                          { center-visible-columns; }
+  MOD+MINUS                           { set-column-width "-10%"; }
+  MOD+EQUAL                           { set-column-width "+10%"; }
+  MOD+SHIFT+MINUS                     { set-window-height "-10%"; }
+  MOD+SHIFT+EQUAL                     { set-window-height "+10%"; }
+
+  MOD+CTRL+F                          { fullscreen-window; }
+  MOD+W                               { toggle-column-tabbed-display; }
+
+  CTRL+F12                            { screenshot; }
+
+  CTRL+ALT+DELETE                     { quit; }
+  MOD+O                               repeat=false { toggle-overview; }
+  MOD+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+}
