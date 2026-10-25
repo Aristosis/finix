@@ -11,6 +11,16 @@
       "lastModified": 1792410219,
       "submodules": false
     },
+    "hjem": {
+      "type": "Git",
+      "fetchType": "git",
+      "branch": "main",
+      "revision": "4cd448d5b3220b8bbccdb6e7e8185b515f63a776",
+      "url": "https://github.com/feel-co/hjem",
+      "hash": "sha256-xj1hq1P05Lekx9tAtyJGSMFw8Z5oK4jh+n7Qr0Q1m5k=",
+      "lastModified": 1792547720,
+      "submodules": false
+    },
     "nixpkgs": {
       "type": "Tarball",
       "fetchType": "tarball",

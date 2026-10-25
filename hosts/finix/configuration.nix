@@ -1,4 +1,5 @@
 {
+  self,
   config,
   modules,
   localModules,
@@ -54,6 +55,14 @@
       config.services.seatd.group
     ];
     shell = pkgs.zsh;
+  };
+
+
+  hjem.users.ari = {
+    user = "ari";
+    xdg.config.files = {
+      "nvim".source = "${self}/config/nvim";
+    };
   };
 
   services.rtkit = {

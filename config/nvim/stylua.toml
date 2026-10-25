@@ -1,0 +1,8 @@
+call_parentheses = "NoSingleTable"
+collapse_simple_statement = "ConditionalOnly"
+column_width = 120
+indent_type = "Spaces"
+indent_width = 3
+quote_style = "ForceDouble"
+space_after_function_names = "Never"
+syntax = "LuaJIT"
