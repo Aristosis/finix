@@ -62,13 +62,22 @@
   # self + "/config/nvim" - path
   hjem.users.ari = {
     user = "ari";
-    xdg.config.files = {
+    xdg.config.files =
+    let
+    gtkrc = ''
+      [Settings]
+      gtk-application-prefer-dark-theme=true
+    '';
+    in
+    {
       "nvim".source = "${self}/config/nvim";
       "fuzzel".source = "${self}/config/fuzzel";
       "kitty".source = "${self}/config/kitty";
       "mako".source = "${self}/config/mako";
       "niri".source = "${self}/config/niri";
       "waybar".source = "${self}/config/waybar";
+      "gtk-3.0".text = gtkrc;
+      "gtk-4.0".text = gtkrc;
       "user-dirs.dirs".text = ''
         XDG_DESKTOP_DIR="$HOME/media/hdd/Desktop"
         XDG_DOWNLOAD_DIR="$HOME/media/downloads"
