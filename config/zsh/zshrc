@@ -1,9 +1,8 @@
-alias -- cat="bat";
-alias -- nrs="sudo nixos-rebuild switch --flake $HOME/media/projects/nixos";
-alias -- ls="lsd";
-alias -- l="lsd -l";
-alias -- ll="lsd -alh";
-alias -- lt="lsd --tree";
+FINIX_CONFIG="$HOME/media/projects/finix"
+alias -- nrs="sudo nixos-rebuild switch -f $FINIX_CONFIG -A desktop";
+alias -- vi="nvim";
+alias -- l="ls -l";
+alias -- ll="ls -alh";
 
 setopt share_history
 setopt inc_append_history
@@ -15,15 +14,8 @@ setopt glob_complete
 setopt pushd_ignore_dups
 setopt prompt_subst
 
-autoload -Uz compinit
-fpath=(''${(ou)fpath}) # Stable fpath order hence consistent cache hit.
-if [[ ! -s ''${ZDOTDIR:-$HOME}/.zcompdump || \
-  /run/current-system/sw -nt ''${ZDOTDIR:-$HOME}/.zcompdump ]]; then
-    compinit
-    zcompile ''${ZDOTDIR:-$HOME}/.zcompdump 2>/dev/null
-else
-  compinit -C
-fi
+HISTSIZE=10000
+SAVEHIST=10000
 
 zstyle ':completion:*' group-name \'\'
 zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
@@ -32,14 +24,10 @@ zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(fzf --zsh)"
 
-# source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
-
 git_current_branch() {
   local branch=$(git branch --show-current 2>/dev/null)
   [[ -n $branch ]] && echo " $branch "
 }
 
-precmd() {
-  PROMPT=$'\n%(?..%F{red}[%?]%f )%F{blue}$(git_current_branch)%f%~\n> '
-}
+PROMPT=$'\n%(?..%F{red}[%?]%f )%F{blue}$(git_current_branch)%f%~\n> '
+
