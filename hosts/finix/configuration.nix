@@ -108,7 +108,10 @@
   };
 
   programs = {
-    pipewire.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+    };
     wireplumber.enable = true;
   };
 
@@ -136,6 +139,7 @@
     fd
     zoxide
 
+    p7zip
     heroic
     firefox
     obsidian
