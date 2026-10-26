@@ -76,8 +76,8 @@
       "mako".source = "${self}/config/mako";
       "niri".source = "${self}/config/niri";
       "waybar".source = "${self}/config/waybar";
-      "gtk-3.0".text = gtkrc;
-      "gtk-4.0".text = gtkrc;
+      "gtk-3.0/settings.ini".text = gtkrc;
+      "gtk-4.0/settings.ini".text = gtkrc;
       "user-dirs.dirs".text = ''
         XDG_DESKTOP_DIR="$HOME/media/hdd/Desktop"
         XDG_DOWNLOAD_DIR="$HOME/media/downloads"
@@ -136,6 +136,7 @@
     fd
     zoxide
 
+    heroic
     firefox
     obsidian
     syncthing
