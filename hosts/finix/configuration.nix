@@ -52,6 +52,7 @@
       "render"
       "audio"
       "pipewire"
+      "dialout"
       config.services.seatd.group
     ];
     shell = pkgs.zsh;
@@ -138,13 +139,22 @@
     ripgrep
     fd
     zoxide
-
+    direnv
+    nix-direnv
     p7zip
+
+    # nix cli
+    nix-du
+    nix-diff
+    nix-tree
+
+    (obs-studio.override {
+        cudaSupport = true;
+    })
     heroic
     firefox
     obsidian
     syncthing
-    steam-run
     mpv
     gnutar
   ];

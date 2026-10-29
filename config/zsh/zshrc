@@ -18,6 +18,7 @@ setopt glob_complete
 setopt pushd_ignore_dups
 setopt prompt_subst
 
+HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
@@ -34,4 +35,9 @@ git_current_branch() {
 }
 
 PROMPT=$'\n%(?..%F{red}[%?]%f )%F{blue}$(git_current_branch)%f%~\n> '
+eval "$(direnv hook zsh)"
 
+if [[ -z "${DIRENV_HOOK_INITIALIZED:-}" ]]; then
+  export DIRENV_HOOK_INITIALIZED=1
+  eval "$(direnv hook zsh)"
+fi
