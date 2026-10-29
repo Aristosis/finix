@@ -6,18 +6,22 @@
   ...
 }:
 {
-  boot.initrd.availableKernelModules = [
-    "xhci_pci"
-    "ahci"
-    "nvme"
-    "usb_storage"
-    "usbhid"
-    "sd_mod"
-    "sr_mod"
-  ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+  boot = {
+    extraModulePackages = [ ];
+    initrd = {
+      kernelModules = [ "kvm-amd" ];
+      availableKernelModules = [
+        "xhci_pci"
+        "ahci"
+        "nvme"
+        "usb_storage"
+        "usbhid"
+        "sd_mod"
+        "sr_mod"
+      ];
+    };
+  };
+  programs.modprobe.blacklist = [ "amdgpu" ];
 
   fileSystems = {
     "/" = {
@@ -46,9 +50,11 @@
 
   swapDevices = [ ];
 
-  hardware.firmware = with pkgs; [
-    linux-firmware
-    sof-firmware
-  ];
-  hardware.cpu.amd.updateMicrocode = true;
+  hardware = {
+    cpu.amd.updateMicrocode = true;
+    firmware = with pkgs; [
+      linux-firmware
+      sof-firmware
+    ];
+  };
 }

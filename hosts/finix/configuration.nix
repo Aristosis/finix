@@ -41,8 +41,6 @@
     sessiond.enable = true;
   };
 
-  programs.zsh.enable = true;
-
   users.users."ari" = {
     isNormalUser = true;
     extraGroups = [
@@ -98,17 +96,21 @@
     '';
   };
 
-  services.rtkit = {
-    enable = true;
-    extraGroups = [ config.services.seatd.group ];
+  services = {
+    rtkit = {
+      enable = true;
+      extraGroups = [ config.services.seatd.group ];
+    };
+
+    ly = {
+      enable = true;
+      settings.session_log = ".local/state/ly-session.log";
+    };
   };
 
-  services.ly = {
-    enable = true;
-    settings.session_log = ".local/state/ly-session.log";
-  };
 
   programs = {
+    zsh.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -126,8 +128,6 @@
       modesetting.enable = true;
     };
   };
-
-  programs.modprobe.blacklist = [ "amdgpu" ];
 
   services.nix-daemon.settings = {
     substituters = [ "https://cache.nixos-cuda.org" ];
