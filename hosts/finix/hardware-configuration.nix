@@ -51,7 +51,17 @@
   swapDevices = [ ];
 
   hardware = {
+    graphics.enable = true;
+    graphics.enable32Bit = true;
+
+    nvidia = {
+      enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+      modesetting.enable = true;
+    };
+
     cpu.amd.updateMicrocode = true;
+
     firmware = with pkgs; [
       linux-firmware
       sof-firmware
