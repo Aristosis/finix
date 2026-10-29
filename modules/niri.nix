@@ -6,22 +6,24 @@
 {
   programs.niri.enable = true;
 
-  environment.systemPackages = with pkgs; with localPkgs;
-  [
-    fuzzel-character-picker
-    fuzzel
-    kitty
-    mako
-    waybar
-    swaybg
-    banana-cursor
+  environment.systemPackages =
+    with pkgs;
+    with localPkgs;
+    [
+      fuzzel-character-picker
+      fuzzel
+      kitty
+      mako
+      waybar
+      swaybg
+      banana-cursor
 
-    banana-cursor
-    cliphist
-    swaybg
-    wl-clipboard
-    xwayland-satellite
-  ];
+      banana-cursor
+      cliphist
+      swaybg
+      wl-clipboard
+      xwayland-satellite
+    ];
 
   environment.etc."xdg/xdg-desktop-portal/niri-portals.conf".text = ''
     [preferred]

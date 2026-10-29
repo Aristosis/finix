@@ -13,7 +13,14 @@ in
 {
   desktop = finix.lib.finixSystem {
     inherit (pkgs) lib;
-    specialArgs = { inherit sources localPkgs localModules self; };
+    specialArgs = {
+      inherit
+        sources
+        localPkgs
+        localModules
+        self
+        ;
+    };
     modules = [
       { nixpkgs.pkgs = pkgs; }
       hjem.finixModules.default

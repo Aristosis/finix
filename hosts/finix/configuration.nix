@@ -8,8 +8,7 @@
   ...
 }:
 {
-  imports = with modules;
-  [
+  imports = with modules; [
     ./hardware-configuration.nix
     openssh
     sysklogd
@@ -56,41 +55,39 @@
     shell = pkgs.zsh;
   };
 
-
   # "${self}/config/nvim" - string
   # self + "/config/nvim" - path
   hjem.users.ari = {
     user = "ari";
     xdg.config.files =
-    let
-    gtkrc = ''
-      [Settings]
-      gtk-application-prefer-dark-theme=true
-    '';
-    in
-    {
-      "nvim".source = "${self}/config/nvim";
-      "fuzzel".source = "${self}/config/fuzzel";
-      "kitty".source = "${self}/config/kitty";
-      "mako".source = "${self}/config/mako";
-      "niri".source = "${self}/config/niri";
-      "waybar".source = "${self}/config/waybar";
-      "gtk-3.0/settings.ini".text = gtkrc;
-      "gtk-4.0/settings.ini".text = gtkrc;
-      "user-dirs.dirs".text = ''
-        XDG_DESKTOP_DIR="$HOME/media/hdd/Desktop"
-        XDG_DOWNLOAD_DIR="$HOME/media/downloads"
-        XDG_DOCUMENTS_DIR="$HOME/media/hdd/documents"
-        XDG_MUSIC_DIR="$HOME/media/hdd/music"
-        XDG_PICTURES_DIR="$HOME/media/hdd/pictures"
-        XDG_VIDEOS_DIR="$HOME/media/hdd/videos"
-        XDG_PROJECTS_DIR="$HOME/media/projects"
-        XDG_TEMPLATES_DIR="/dev/null"
-        XDG_PUBLICSHARE_DIR="/dev/null"
-      '';
-    };
-    files.".zshrc".text = (builtins.readFile "${self}/config/zsh/zshrc") +
-    ''
+      let
+        gtkrc = ''
+          [Settings]
+          gtk-application-prefer-dark-theme=true
+        '';
+      in
+      {
+        "nvim".source = "${self}/config/nvim";
+        "fuzzel".source = "${self}/config/fuzzel";
+        "kitty".source = "${self}/config/kitty";
+        "mako".source = "${self}/config/mako";
+        "niri".source = "${self}/config/niri";
+        "waybar".source = "${self}/config/waybar";
+        "gtk-3.0/settings.ini".text = gtkrc;
+        "gtk-4.0/settings.ini".text = gtkrc;
+        "user-dirs.dirs".text = ''
+          XDG_DESKTOP_DIR="$HOME/media/hdd/Desktop"
+          XDG_DOWNLOAD_DIR="$HOME/media/downloads"
+          XDG_DOCUMENTS_DIR="$HOME/media/hdd/documents"
+          XDG_MUSIC_DIR="$HOME/media/hdd/music"
+          XDG_PICTURES_DIR="$HOME/media/hdd/pictures"
+          XDG_VIDEOS_DIR="$HOME/media/hdd/videos"
+          XDG_PROJECTS_DIR="$HOME/media/projects"
+          XDG_TEMPLATES_DIR="/dev/null"
+          XDG_PUBLICSHARE_DIR="/dev/null"
+        '';
+      };
+    files.".zshrc".text = (builtins.readFile "${self}/config/zsh/zshrc") + ''
       source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
     '';
@@ -108,7 +105,6 @@
     };
   };
 
-
   programs = {
     zsh.enable = true;
     pipewire = {
@@ -117,7 +113,6 @@
     };
     wireplumber.enable = true;
   };
-
 
   hardware = {
     graphics.enable = true;
@@ -149,7 +144,7 @@
     nix-tree
 
     (obs-studio.override {
-        cudaSupport = true;
+      cudaSupport = true;
     })
     heroic
     firefox
@@ -164,8 +159,7 @@
     icons.enable = true;
     mime.enable = true;
     portal.enable = true;
-    portal.portals = with pkgs;
-    [
+    portal.portals = with pkgs; [
       oo7-portal
     ];
   };
