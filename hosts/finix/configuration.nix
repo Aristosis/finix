@@ -24,6 +24,7 @@
 
     (localModules + /niri.nix)
     (localModules + /fonts.nix)
+    (localModules + /packages.nix)
   ];
 
   networking.hostName = "finix";
@@ -129,31 +130,6 @@
     substituters = [ "https://cache.nixos-cuda.org" ];
     trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
   };
-
-  environment.systemPackages = with pkgs; [
-    localPkgs.fzf-wrapped
-    ripgrep
-    fd
-    zoxide
-    direnv
-    nix-direnv
-    p7zip
-
-    # nix cli
-    nix-du
-    nix-diff
-    nix-tree
-
-    (obs-studio.override {
-      cudaSupport = true;
-    })
-    heroic
-    firefox
-    obsidian
-    syncthing
-    mpv
-    gnutar
-  ];
 
   xdg = {
     autostart.enable = true;
