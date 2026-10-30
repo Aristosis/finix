@@ -33,9 +33,6 @@ input {
 
 environment {
   ELECTRON_OZONE_PLATFORM_HINT "auto"
-  NVD_BACKEND "direct"
-  __NV_PRIME_RENDER_OFFLOAD "1"
-  __GLX_VENDOR_LIBRARY_NAME "nvidia"
-  GBM_BACKEND "nvidia-drm"
+  __EGL_EXTERNAL_PLATFORM_CONFIG_DIRS "/run/opengl-driver/share/egl/egl_external_platform.d"
 }
 
