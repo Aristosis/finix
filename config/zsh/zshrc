@@ -32,9 +32,12 @@ git_current_branch() {
 }
 
 PROMPT=$'\n%(?..%F{red}[%?]%f )%F{blue}$(git_current_branch)%f%~\n> '
-eval "$(direnv hook zsh)"
 
 if [[ -z "${DIRENV_HOOK_INITIALIZED:-}" ]]; then
   export DIRENV_HOOK_INITIALIZED=1
   eval "$(direnv hook zsh)"
 fi
+
+eval "$(zoxide init zsh --cmd cd)"
+eval "$(fzf --zsh)"
+
