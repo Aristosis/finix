@@ -17,6 +17,7 @@ setopt auto_menu
 setopt glob_complete
 setopt pushd_ignore_dups
 setopt prompt_subst
+setopt interactive_comments
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
