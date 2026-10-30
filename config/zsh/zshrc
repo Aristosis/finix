@@ -25,10 +25,6 @@ SAVEHIST=10000
 zstyle ':completion:*' group-name \'\'
 zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
 
-
-eval "$(zoxide init zsh --cmd cd)"
-eval "$(fzf --zsh)"
-
 git_current_branch() {
   local branch=$(git branch --show-current 2>/dev/null)
   [[ -n $branch ]] && echo " $branch "

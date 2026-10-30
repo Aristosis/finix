@@ -73,6 +73,7 @@
         "mako".source = "${self}/config/mako";
         "niri".source = "${self}/config/niri";
         "waybar".source = "${self}/config/waybar";
+        "direnv".source = "${self}/config/direnv";
         "gtk-3.0/settings.ini".text = gtkrc;
         "gtk-4.0/settings.ini".text = gtkrc;
         "user-dirs.dirs".text = ''
