@@ -25,7 +25,7 @@ return {
      };
   };
 }
-]]
+]],
    },
    shellDotNix = {
       prefix = "shell.nix",
@@ -36,6 +36,6 @@ pkgs.mkShell {
      $1
    ];
 }
-]]
-   }
+]],
+   },
 }

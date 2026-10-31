@@ -9,7 +9,7 @@ vim.pack.add {
    { src = "https://github.com/3rd/image.nvim" },
    { src = "https://github.com/nvim-orgmode/orgmode" },
    { src = "https://github.com/vague-theme/vague.nvim" },
-   { src = "https://github.com/L3MON4D3/LuaSnip" }
+   { src = "https://github.com/L3MON4D3/LuaSnip" },
 }
 
 require("orgmode").setup()
@@ -31,14 +31,14 @@ snippets.setup {
    },
    snippets = {
       snippets.gen_loader.from_lang(),
-   }
+   },
 }
 
 require("mini.pick").setup {
    options = {
       content_from_bottom = true,
       cache = true,
-   }
+   },
 }
 require("mini.extra").setup()
 vim.keymap.set("n", "<leader><leader>", MiniPick.builtin.files)
@@ -73,5 +73,5 @@ vim.keymap.set("n", "<leader>_", function()
    oil.open(vim.fn.getcwd())
 end)
 
-require("vague").setup({transparent=true})
+-- require("vague").setup({transparent=true})
 vim.cmd.colorscheme("vague")

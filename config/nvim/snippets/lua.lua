@@ -1,13 +1,12 @@
 return {
    module = {
       prefix = "module",
-      body =
-[[
+      body = [[
 local $1 = {}
 
 $0
 
 return $1
-]]
-   }
+]],
+   },
 }
