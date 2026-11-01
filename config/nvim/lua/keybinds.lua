@@ -8,18 +8,18 @@ end, {})
 -- Toggle diagnostics display
 local function reconf_diags()
    vim.diagnostic.config {
-      virtual_text = _G.diagnostics.virtual_text,
-      virtual_lines = _G.diagnostics.virtual_lines,
+      virtual_text = diagnostics.virtual_text,
+      virtual_lines = diagnostics.virtual_lines,
    }
 end
 
-vim.keymap.set("n", "<leader>d", function()
-   _G.diagnostics.virtual_text = not _G.diagnostics.virtual_text
+vim.keymap.set("n", "<leader>w", function()
+   diagnostics.virtual_text = not diagnostics.virtual_text
    reconf_diags()
 end, { desc = "Toggle virtual text" })
 
-vim.keymap.set("n", "<leader>D", function()
-   _G.diagnostics.virtual_lines = not _G.diagnostics.virtual_lines
+vim.keymap.set("n", "<leader>W", function()
+   diagnostics.virtual_lines = not diagnostics.virtual_lines
    reconf_diags()
 end, { desc = "Toggle virtual lines" })
 
@@ -35,7 +35,7 @@ end, { expr = true, silent = true })
 vim.keymap.set("t", "<S-Esc>", vim.cmd.stopinsert)
 
 -- Terminal!!!
-_G.terminal = {
+terminal = {
    buf = nil,
    win = nil,
 }
@@ -46,7 +46,7 @@ local function createTerminalWindow(sizeFactor)
    local row = math.ceil((vim.o.lines - height) / 2)
    local col = math.ceil((vim.o.columns - width) / 2)
 
-   return vim.api.nvim_open_win(_G.terminal.buf, false, {
+   return vim.api.nvim_open_win(terminal.buf, false, {
       relative = "editor",
       height = height,
       width = width,
@@ -65,23 +65,21 @@ local function createTerminalBuffer()
    vim.bo[buf].buflisted = false
 
    vim.keymap.set("n", "<Esc>", function()
-      vim.api.nvim_win_close(_G.terminal.win, true)
+      vim.api.nvim_win_close(terminal.win, true)
    end, { buffer = buf })
 
    return buf
 end
 
 vim.keymap.set("n", "<leader>t", function()
-   if _G.terminal.buf == nil or vim.api.nvim_buf_is_valid(_G.terminal.buf) == false then
-      _G.terminal.buf = createTerminalBuffer()
+   if terminal.buf == nil or vim.api.nvim_buf_is_valid(terminal.buf) == false then
+      terminal.buf = createTerminalBuffer()
    end
 
-   if not _G.terminal.win or not vim.api.nvim_win_is_valid(_G.terminal.win) then
-      _G.terminal.win = createTerminalWindow(1.4)
-   end
+   if not terminal.win or not vim.api.nvim_win_is_valid(terminal.win) then terminal.win = createTerminalWindow(1.4) end
 
-   vim.api.nvim_set_current_win(_G.terminal.win)
-   vim.api.nvim_buf_call(_G.terminal.buf, vim.cmd.startinsert)
+   vim.api.nvim_set_current_win(terminal.win)
+   vim.api.nvim_buf_call(terminal.buf, vim.cmd.startinsert)
 end)
 
 -- find
@@ -95,12 +93,13 @@ vim.keymap.set("n", "<leader>q", function()
    else
       vim.cmd.copen()
    end
+   copen = not copen
 end)
 
 vim.api.nvim_create_autocmd("LspAttach", {
    group = vim.api.nvim_create_augroup("LspKeymaps", { clear = true }),
    callback = function(args)
-      local client = vim.lsp.get_client_by_id(args.data.client_id)
+      -- local client = vim.lsp.get_client_by_id(args.data.client_id)
       local bufnr = args.buf
 
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr })
