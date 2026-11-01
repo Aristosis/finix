@@ -21,17 +21,17 @@ require("mini.statusline").setup()
 require("mini.ai").setup()
 require("mini.splitjoin").setup()
 
-local snippets = require("mini.snippets")
-snippets.setup {
+local minisnips = require("mini.snippets")
+minisnips.setup {
    expand = {
       -- Always insert the best-matched snippet without showing vim.ui.select
       select = function(snippets, insert)
          return insert(snippets[1])
       end,
    },
-   snippets = {
-      snippets.gen_loader.from_lang(),
-   },
+   -- snippets = {
+   --    snippets.gen_loader.from_lang(),
+   -- },
 }
 
 require("mini.pick").setup {
