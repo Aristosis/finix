@@ -37,7 +37,7 @@ end, { expr = true, silent = true })
 vim.keymap.set("t", "<S-Esc>", vim.cmd.stopinsert)
 
 -- Terminal!!!
-terminal = {
+local terminal = {
    buf = nil,
    win = nil,
 }
