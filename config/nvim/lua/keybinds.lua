@@ -1,9 +1,9 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Toggle autocomplete
-vim.keymap.set("n", "<leader>c", function()
+vim.api.nvim_create_user_command("ToggleAutocomplete", function()
    vim.o.autocomplete = not vim.o.autocomplete
-end)
+end, {})
 
 -- Toggle diagnostics display
 local function reconf_diags()
