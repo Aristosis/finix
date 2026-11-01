@@ -41,11 +41,16 @@ require("mini.pick").setup {
    },
 }
 require("mini.extra").setup()
+
+---@diagnostic disable: undefined-global
 vim.keymap.set("n", "<leader><leader>", MiniPick.builtin.files)
 vim.keymap.set("n", "<leader>f", MiniPick.builtin.grep_live)
 vim.keymap.set("n", "<leader>b", MiniPick.builtin.buffers)
-vim.keymap.set("n", "<leader>d", MiniExtra.pickers.lsp)
+vim.keymap.set("n", "<leader>d", function()
+   MiniExtra.pickers.lsp { scope = "workspace_symbol" }
+end)
 vim.keymap.set("n", "<leader>m", MiniExtra.pickers.marks)
+---@diagnostic enable: undefined-global
 
 require("gitsigns").setup { signcolumn = false }
 
