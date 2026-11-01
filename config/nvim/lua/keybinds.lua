@@ -1,6 +1,7 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 vim.keymap.set("n", "<leader>c", vim.cmd.make)
+vim.keymap.set("n", "<leader>C", ":set makeprg=" .. vim.opt_local.makeprg:get())
 
 -- Toggle autocomplete
 vim.api.nvim_create_user_command("ToggleAutocomplete", function()
