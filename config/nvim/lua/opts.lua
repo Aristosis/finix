@@ -57,7 +57,11 @@ vim.opt.complete:append("o")
 vim.opt.completeopt = { "menuone", "noinsert", "popup", "fuzzy" }
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
+
 vim.o.wrap = false
+vim.opt.breakindent = true
+vim.opt.linebreak = true
+
 vim.o.list = true
 vim.opt.listchars = {
    trail = "·",
