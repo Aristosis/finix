@@ -39,6 +39,14 @@ vim.keymap.set("n", "<leader>_", function()
    oil.open(vim.fn.getcwd())
 end)
 
+require("snacks").setup {
+   input = { enabled = true },
+   picker = {
+      enabled = true,
+      ui_select = true,
+   },
+}
+
 -- Snacks Pickers
 ---@diagnostic disable: undefined-global
 vim.keymap.set("n", "<leader><space>", Snacks.picker.smart)
