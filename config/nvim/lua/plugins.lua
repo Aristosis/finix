@@ -80,4 +80,61 @@ vim.keymap.set({ "n", "x", "o" }, "S", function()
    require("flash").treesitter()
 end)
 
+local mode_map = {
+   ["n"] = { "NORMAL", "%#DiagnosticOk#" },
+   ["i"] = { "INSERT", "%#DiagnosticInfo#" },
+   ["v"] = { "VISUAL", "%#DiagnosticWarn#" },
+   ["V"] = { "V-LINE", "%#DiagnosticWarn#" },
+   ["\22"] = { "V-BLOCK", "%#DiagnosticWarn#" },
+   ["c"] = { "COMMAND", "%#DiagnosticHint#" },
+   ["R"] = { "REPLACE", "%#DiagnosticError#" },
+   ["t"] = { "TERMINAL", "%#DiagnosticOk#" },
+}
+
+function _G.Statusline()
+   local m = vim.api.nvim_get_mode().mode
+   local mode_info = mode_map[m] or { m:upper(), "%#StatusLine#" }
+   local mode_str = string.format("%s ▊ %s %%#StatusLine#", mode_info[2], mode_info[1])
+
+   -- git
+   local git_str = ""
+   local gs = vim.b.gitsigns_status_dict
+   if gs and gs.head and gs.head ~= "" then
+      local added = (gs.added and gs.added > 0) and (" +" .. gs.added) or ""
+      local changed = (gs.changed and gs.changed > 0) and (" ~" .. gs.changed) or ""
+      local removed = (gs.removed and gs.removed > 0) and (" -" .. gs.removed) or ""
+      git_str = string.format("  %s%s%s%s │", gs.head, added, changed, removed)
+   end
+
+   -- lsp
+   local lsp_clients = vim.lsp.get_clients { bufnr = 0 }
+   local lsp_names = {}
+   for _, client in ipairs(lsp_clients) do
+      table.insert(lsp_names, client.name)
+   end
+   local lsp_str = #lsp_names > 0 and ("  " .. table.concat(lsp_names, ",") .. " │") or ""
+
+   -- file / diag
+   local file = " %f %m%r"
+   local diag = vim.diagnostic.status()
+   local diag_str = diag ~= "" and (" │ " .. diag) or ""
+   local ft = vim.bo.filetype ~= "" and vim.bo.filetype or "plain"
+   local pos = "%l:%c (%p%%) "
+
+   return table.concat {
+      mode_str,
+      git_str,
+      file,
+      diag_str,
+      "%=", -- Right-align
+      lsp_str,
+      " ",
+      ft,
+      " │ ",
+      pos,
+   }
+end
+
+vim.opt.statusline = "%!v:lua.Statusline()"
+
 vim.cmd.colorscheme("vague")
