@@ -72,11 +72,11 @@ vim.api.nvim_create_autocmd("FileType", {
    end,
 })
 
-vim.keymap.set({ "n", "x", "o" }, "s", function()
+vim.keymap.set({ "n", "x", "o" }, "<CR>", function()
    require("flash").jump()
 end)
 
-vim.keymap.set({ "n", "x", "o" }, "S", function()
+vim.keymap.set({ "n", "x", "o" }, "<S-CR>", function()
    require("flash").treesitter()
 end)
 
