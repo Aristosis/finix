@@ -7,6 +7,7 @@ vim.pack.add {
    { src = "https://github.com/lewis6991/gitsigns.nvim" },
    { src = "https://github.com/vague-theme/vague.nvim" },
    { src = "https://github.com/folke/snacks.nvim" },
+   { src = "https://github.com/folke/flash.nvim" },
 }
 
 require("mini.ai").setup()
@@ -61,11 +62,19 @@ vim.keymap.set("n", "<leader>m", Snacks.picker.marks)
 vim.keymap.set("n", "<leader>r\"", Snacks.picker.registers)
 ---@diagnostic enable: undefined-global
 
-vim.cmd.colorscheme("vague")
-
 vim.api.nvim_create_autocmd("FileType", {
    pattern = "snacks_picker_input",
    callback = function()
       vim.opt_local.autocomplete = false
    end,
 })
+
+vim.keymap.set({ "n", "x", "o" }, "s", function()
+   require("flash").jump()
+end)
+
+vim.keymap.set({ "n", "x", "o" }, "S", function()
+   require("flash").treesitter()
+end)
+
+vim.cmd.colorscheme("vague")
