@@ -15,6 +15,9 @@ require("mini.move").setup()
 require("mini.align").setup()
 require("mini.surround").setup()
 require("mini.splitjoin").setup()
+require("mini.icons").setup()
+---@diagnostic disable-next-line: undefined-global
+MiniIcons.mock_nvim_web_devicons()
 
 require("gitsigns").setup()
 
