@@ -94,9 +94,9 @@ vim.api.nvim_create_autocmd("FileType", {
    pattern = "markdown",
    group = AG_FiletypeOpts,
    callback = function()
-      vim.o.wrap = true
-      vim.o.linebreak = true
-      vim.o.spell = true
+      vim.opt_local.wrap = true
+      vim.opt_local.linebreak = true
+      vim.opt_local.spell = true
       vim.keymap.set("n", "j", "gj")
       vim.keymap.set("n", "k", "gk")
    end,
