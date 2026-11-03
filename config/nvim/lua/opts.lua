@@ -27,6 +27,7 @@ vim.opt.diffopt:append {
 }
 
 vim.o.title = true
+vim.o.laststatus = 3
 vim.o.virtualedit = "block"
 vim.o.number = true
 vim.o.relativenumber = true
