@@ -13,6 +13,7 @@ vim.pack.add {
 require("mini.ai").setup()
 require("mini.move").setup()
 require("mini.align").setup()
+require("mini.snippets").setup()
 require("mini.surround").setup()
 require("mini.splitjoin").setup()
 require("mini.icons").setup()
