@@ -8,22 +8,21 @@ vim.api.nvim_create_user_command("ToggleAutocomplete", function()
    vim.o.autocomplete = not vim.o.autocomplete
 end, {})
 
--- Toggle diagnostics display
-local function reconf_diags()
+local function apply_diagnostics()
    vim.diagnostic.config {
-      virtual_text = diagnostics.virtual_text,
-      virtual_lines = diagnostics.virtual_lines,
+      virtual_text = DiagState.virtual_text,
+      virtual_lines = DiagState.virtual_lines,
    }
 end
 
 vim.keymap.set("n", "<leader>w", function()
-   diagnostics.virtual_text = not diagnostics.virtual_text
-   reconf_diags()
+   DiagState.virtual_text = not DiagState.virtual_text
+   apply_diagnostics()
 end, { desc = "Toggle virtual text" })
 
 vim.keymap.set("n", "<leader>W", function()
-   diagnostics.virtual_lines = not diagnostics.virtual_lines
-   reconf_diags()
+   DiagState.virtual_lines = not DiagState.virtual_lines
+   apply_diagnostics()
 end, { desc = "Toggle virtual lines" })
 
 -- let me press enter without accepting autocomplete sheiz
