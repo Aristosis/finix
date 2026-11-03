@@ -6,6 +6,7 @@ vim.pack.add {
    { src = "https://github.com/neovim/nvim-lspconfig" },
    { src = "https://github.com/lewis6991/gitsigns.nvim" },
    { src = "https://github.com/vague-theme/vague.nvim" },
+   { src = "https://github.com/folke/snacks.nvim" },
 }
 
 require("mini.ai").setup()
@@ -37,5 +38,19 @@ vim.keymap.set("n", "<leader>-", oil.open)
 vim.keymap.set("n", "<leader>_", function()
    oil.open(vim.fn.getcwd())
 end)
+
+-- Snacks Pickers
+---@diagnostic disable: undefined-global
+vim.keymap.set("n", "<leader><space>", Snacks.picker.smart)
+vim.keymap.set("n", "<leader>ff", Snacks.picker.files)
+vim.keymap.set("n", "<leader>fg", Snacks.picker.grep)
+vim.keymap.set("x", "<leader>fg", Snacks.picker.grep_word)
+vim.keymap.set("n", "<leader>b", Snacks.picker.buffers)
+vim.keymap.set("n", "<leader>u", Snacks.picker.undo)
+vim.keymap.set("n", "<leader>fh", Snacks.picker.help)
+vim.keymap.set("n", "<leader>d", Snacks.picker.diagnostics)
+vim.keymap.set("n", "<leader>m", Snacks.picker.marks)
+vim.keymap.set("n", "<leader>r\"", Snacks.picker.registers)
+---@diagnostic enable: undefined-global
 
 vim.cmd.colorscheme("vague")

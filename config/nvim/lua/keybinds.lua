@@ -93,14 +93,14 @@ end)
 vim.keymap.set("n", "<leader><leader>", ":find ")
 
 -- qf
-local copen = false
 vim.keymap.set("n", "<leader>q", function()
-   if copen then
-      vim.cmd.cclose()
-   else
-      vim.cmd.copen()
+   for _, win in ipairs(vim.fn.getwininfo()) do
+      if win.quickfix == 1 then
+         vim.cmd.cclose()
+         return
+      end
    end
-   copen = not copen
+   vim.cmd.copen()
 end)
 
 vim.api.nvim_create_autocmd("LspAttach", {
