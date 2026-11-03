@@ -13,7 +13,6 @@ _G.DiagState = {
    virtual_text = true,
    virtual_lines = false,
 }
-Apply_diagnostics()
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"

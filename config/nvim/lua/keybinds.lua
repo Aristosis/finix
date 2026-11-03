@@ -19,6 +19,7 @@ function Apply_diagnostics()
       virtual_lines = _G.DiagState.virtual_lines,
    }
 end
+Apply_diagnostics()
 
 vim.keymap.set("n", "<leader>w", function()
    DiagState.virtual_text = not DiagState.virtual_text
