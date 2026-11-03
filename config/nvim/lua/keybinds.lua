@@ -10,8 +10,13 @@ end, {})
 
 local function apply_diagnostics()
    vim.diagnostic.config {
-      virtual_text = DiagState.virtual_text,
-      virtual_lines = DiagState.virtual_lines,
+      update_in_insert = false,
+      severity_sort = true,
+      jump = { float = true },
+      float = { source = "if_many" },
+      underline = { severity = { min = vim.diagnostic.severity.WARN } },
+      virtual_text = _G.DiagState.virtual_text,
+      virtual_lines = _G.DiagState.virtual_lines,
    }
 end
 
