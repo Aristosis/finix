@@ -12,6 +12,10 @@
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
     },
+    "flash.nvim": {
+      "rev": "5f0f270fdc7c5b0c21d903ee85b9cb06f2ac636a",
+      "src": "https://github.com/folke/flash.nvim"
+    },
     "fzf-lua": {
       "rev": "07fce8ac8dffba4e11f1cbe5490d730a2cc5ec7a",
       "src": "https://github.com/ibhagwan/fzf-lua"
@@ -47,6 +51,10 @@
     "oil.nvim": {
       "rev": "d3733d933833a0e59b813ecec99341527adf0c28",
       "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
+      "src": "https://github.com/folke/snacks.nvim"
     },
     "vague.nvim": {
       "rev": "73f8aaa866bf3d14dd0b0ab9e48c11794c1cb7ab",
