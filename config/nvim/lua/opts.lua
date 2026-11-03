@@ -86,6 +86,10 @@ vim.o.lazyredraw = true
 vim.opt.shortmess:append { W = true, I = true, c = true }
 vim.opt.path:append { "**" }
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = ""
+
 local AG_misc = vim.api.nvim_create_augroup("misc", {})
 local AG_FiletypeOpts = vim.api.nvim_create_augroup("FiletypeOpts", {})
 
