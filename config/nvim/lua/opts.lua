@@ -28,6 +28,14 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.netrw_banner = 0
 
+vim.opt.diffopt:append {
+   "internal",
+   "filler",
+   "closeoff",
+   "linematch:60",
+   "algorithm:histogram",
+}
+
 vim.o.title = true
 vim.o.number = true
 vim.o.relativenumber = true
