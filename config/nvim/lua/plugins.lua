@@ -62,3 +62,10 @@ vim.keymap.set("n", "<leader>r\"", Snacks.picker.registers)
 ---@diagnostic enable: undefined-global
 
 vim.cmd.colorscheme("vague")
+
+vim.api.nvim_create_autocmd("FileType", {
+   pattern = "snacks_picker_input",
+   callback = function()
+      vim.opt_local.autocomplete = false
+   end,
+})
