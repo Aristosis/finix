@@ -1,7 +1,14 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
-vim.keymap.set("n", "<leader>c", vim.cmd.make)
-vim.keymap.set("n", "<leader>C", ":set makeprg=" .. vim.opt_local.makeprg:get())
+vim.keymap.set("n", "<leader>c", "<cmd>silent make | redraw | cwindow<CR>")
+vim.keymap.set("n", "<leader>C", function()
+   vim.ui.input({ prompt = "makeprg: ", default = vim.o.makeprg }, function(input)
+      if input and input ~= "" then
+         vim.opt_local.makeprg = input
+         vim.notify("makeprg set to: " .. input, vim.log.levels.INFO)
+      end
+   end)
+end)
 
 -- Toggle autocomplete
 vim.api.nvim_create_user_command("ToggleAutocomplete", function()
