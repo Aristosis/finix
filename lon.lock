@@ -4,11 +4,11 @@
     "finix": {
       "type": "Git",
       "fetchType": "git",
-      "branch": "module/zsh",
-      "revision": "5bebfb102d5149a4964a3060b958bbaee3db66da",
-      "url": "https://github.com/aristosis/finixtosis",
-      "hash": "sha256-stx72dCDdrQpNgW4Rc+ynGCir6iaS+cI5N60KgRbaWU=",
-      "lastModified": 1792410219,
+      "branch": "main",
+      "revision": "34f8558b268afcdf43b851f3a5b06a92f225d650",
+      "url": "https://github.com/finix-community/finix",
+      "hash": "sha256-jmdk6RmwIPtsnzr/33iXQU7z1iqtb8E0j3aAIFqQbvM=",
+      "lastModified": 1793840127,
       "submodules": false
     },
     "hjem": {
