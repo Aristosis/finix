@@ -9,6 +9,7 @@
     nix-direnv
     p7zip
     gnutar
+    curl
 
     # nix cli
     nix-du
