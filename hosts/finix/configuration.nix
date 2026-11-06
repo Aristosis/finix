@@ -109,11 +109,21 @@
 
   programs = {
     zsh.enable = true;
+    wireplumber.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
+      settings = {
+        "context.exec" = [
+          {
+            path = "${config.programs.wireplumber.package}/bin/wireplumber";
+          }
+          {
+            path = "${config.programs.pipewire.package}/bin/pipewire-pulse";
+          }
+        ];
+      };
     };
-    wireplumber.enable = true;
   };
 
   hardware = {
