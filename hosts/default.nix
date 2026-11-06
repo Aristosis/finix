@@ -9,7 +9,6 @@
     nix-daemon
     limine
     sudo
-    zsh
     bash
   ];
 
@@ -71,7 +70,6 @@
       settings.editor_enabled = true;
     };
     sudo.enable = true;
-    zsh.enable = true;
     bash.enable = true;
   };
   security.pam.environment.NIX_PATH.default = "flake:nixpkgs";

@@ -25,6 +25,7 @@
     (localModules + /niri.nix)
     (localModules + /fonts.nix)
     (localModules + /packages.nix)
+    (localModules + /zsh.nix)
   ];
 
   networking.hostName = "finix";
@@ -89,10 +90,6 @@
           XDG_PUBLICSHARE_DIR="/dev/null"
         '';
       };
-    files.".zshrc".text = (builtins.readFile "${self}/config/zsh/zshrc") + ''
-      source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-      source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
-    '';
   };
 
   services = {
@@ -130,7 +127,6 @@
   #   }
   # '';
   programs = {
-    zsh.enable = true;
     wireplumber.enable = true;
 
     pipewire = {
