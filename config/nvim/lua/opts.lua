@@ -5,7 +5,7 @@ vim.lsp.enable {
    "gopls",
    "clangd",
    "gdscript",
-   "nil_ls",
+   "nixd",
    "org",
 }
 

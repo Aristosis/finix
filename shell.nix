@@ -6,5 +6,6 @@ pkgs.mkShell {
     statix
     nixfmt
     nixfmt-tree
+    nixd
   ];
 }
