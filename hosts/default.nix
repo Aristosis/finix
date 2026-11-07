@@ -2,6 +2,7 @@
   sources,
   modules,
   pkgs,
+  localPkgs,
   ...
 }:
 {
@@ -89,7 +90,7 @@
       man
       iproute2
       iputils
-      neovim
+      localPkgs.neovim
       nixos-rebuild-ng
       tmux
     ];

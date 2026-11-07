@@ -12,4 +12,5 @@ rec {
   mako-wrapped = pkgs.callPackage ./mako { };
   waybar-wrapped = pkgs.callPackage ./waybar { inherit pkgs; };
   zsh-wrapped = pkgs.callPackage ./zsh { };
+  neovim = pkgs.callPackage ./neovim.nix { };
 }
