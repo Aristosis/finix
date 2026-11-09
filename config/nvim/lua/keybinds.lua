@@ -19,7 +19,6 @@ function Apply_diagnostics()
    vim.diagnostic.config {
       update_in_insert = false,
       severity_sort = true,
-      jump = { float = true },
       float = { source = "if_many" },
       underline = { severity = { min = vim.diagnostic.severity.WARN } },
       virtual_text = _G.DiagState.virtual_text,
