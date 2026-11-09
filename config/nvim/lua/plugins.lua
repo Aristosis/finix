@@ -7,7 +7,6 @@ vim.pack.add {
    { src = "https://github.com/lewis6991/gitsigns.nvim" },
    { src = "https://github.com/vague-theme/vague.nvim" },
    { src = "https://github.com/folke/snacks.nvim" },
-   { src = "https://github.com/folke/flash.nvim" },
    { src = "https://github.com/NeogitOrg/neogit" },
 }
 
@@ -73,14 +72,6 @@ vim.api.nvim_create_autocmd("FileType", {
       vim.opt_local.autocomplete = false
    end,
 })
-
-vim.keymap.set({ "n", "x", "o" }, "<CR>", function()
-   require("flash").jump()
-end)
-
-vim.keymap.set({ "n", "x", "o" }, "<S-CR>", function()
-   require("flash").treesitter()
-end)
 
 local mode_map = {
    ["n"] = { "NORMAL", "%#DiagnosticOk#" },
