@@ -8,7 +8,7 @@ vim.pack.add {
    { src = "https://github.com/vague-theme/vague.nvim" },
    { src = "https://github.com/folke/snacks.nvim" },
    { src = "https://github.com/folke/flash.nvim" },
-   { src = "https://github.com/tpope/vim-fugitive" },
+   { src = "https://github.com/NeogitOrg/neogit" },
 }
 
 require("mini.ai").setup()
@@ -18,6 +18,7 @@ require("mini.snippets").setup()
 require("mini.surround").setup()
 require("mini.splitjoin").setup()
 require("mini.icons").setup()
+require("neogit").setup()
 ---@diagnostic disable-next-line: undefined-global
 MiniIcons.mock_nvim_web_devicons()
 
