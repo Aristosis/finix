@@ -37,6 +37,7 @@
       portals = with pkgs; [
         xdg-desktop-portal-gnome
         xdg-desktop-portal-gtk
+        oo7-portal
       ];
     };
   };
