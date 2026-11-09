@@ -29,7 +29,6 @@
     [preferred]
     default=gnome;gtk;
     org.freedesktop.impl.portal.FileChooser=gtk;
-    org.freedesktop.impl.portal.Secret=oo7-portal;
   '';
 
   xdg = {
@@ -37,7 +36,6 @@
       portals = with pkgs; [
         xdg-desktop-portal-gnome
         xdg-desktop-portal-gtk
-        oo7-portal
       ];
     };
   };
