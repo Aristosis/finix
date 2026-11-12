@@ -46,7 +46,6 @@ vim.keymap.set("n", "<leader>_", function()
 end)
 
 require("snacks").setup {
-   input = { enabled = true },
    picker = {
       enabled = true,
       ui_select = true,
