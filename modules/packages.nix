@@ -24,5 +24,6 @@
     obsidian
     syncthing
     mpv
+    vesktop
   ];
 }
