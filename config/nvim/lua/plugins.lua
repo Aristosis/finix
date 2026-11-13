@@ -134,4 +134,7 @@ end
 
 vim.opt.statusline = "%!v:lua.Statusline()"
 
+require("vague").setup {
+   transparent = true,
+}
 vim.cmd.colorscheme("vague")
