@@ -3,7 +3,7 @@ window-rule {
 }
 
 layer-rule {
-  match namespace="awww-daemon"
+  match namespace="^wallpaper$"
   place-within-backdrop true
 }
 
