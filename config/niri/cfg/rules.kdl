@@ -20,6 +20,9 @@ layer-rule {
   match at-startup=true
   geometry-corner-radius 12
   place-within-backdrop true
+  background-effect {
+    blur true
+  }
   shadow {
     on
     softness 40
