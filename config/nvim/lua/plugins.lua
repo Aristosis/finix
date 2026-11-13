@@ -16,7 +16,6 @@ require("mini.align").setup()
 require("mini.surround").setup()
 require("mini.splitjoin").setup()
 require("mini.icons").setup()
-require("neogit").setup()
 local mini_snippets = require("mini.snippets")
 mini_snippets.setup {
    snippets = {
@@ -25,6 +24,29 @@ mini_snippets.setup {
 }
 ---@diagnostic disable-next-line: undefined-global
 MiniIcons.mock_nvim_web_devicons()
+
+local neogit = require("neogit")
+neogit.setup()
+
+local function toggle_neogit()
+   local neogit_wins = {}
+
+   for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+      local buf = vim.api.nvim_win_get_buf(win)
+      if vim.bo[buf].filetype:match("^Neogit") then table.insert(neogit_wins, win) end
+   end
+
+   if #neogit_wins > 0 then
+      for _, win in ipairs(neogit_wins) do
+         if vim.api.nvim_win_is_valid(win) then vim.api.nvim_win_close(win, true) end
+      end
+      return
+   end
+
+   neogit.open()
+end
+
+vim.keymap.set("n", "<leader>n", toggle_neogit)
 
 require("gitsigns").setup()
 
