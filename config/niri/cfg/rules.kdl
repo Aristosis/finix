@@ -18,7 +18,6 @@ layer-rule {
 layer-rule {
   match namespace="waybar"
   match at-startup=true
-  geometry-corner-radius 12
   place-within-backdrop true
   background-effect {
     blur true
