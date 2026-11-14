@@ -8,7 +8,7 @@ let
   hjem = import sources.hjem { };
   localPkgs = import ./packages { inherit pkgs; };
   localModules = ./modules;
-  self = builtins.toString ./.;
+  self = toString ./.;
 in
 {
   ari-nuggetbox = finix.lib.finixSystem {
