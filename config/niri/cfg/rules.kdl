@@ -22,12 +22,6 @@ layer-rule {
   background-effect {
     blur true
   }
-  shadow {
-    on
-    softness 40
-    spread 5
-    offset x=0 y=5
-  }
 }
 
 
