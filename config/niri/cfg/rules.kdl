@@ -92,7 +92,7 @@ layout {
 }
 
 animations {
-  // off
+  off
   slowdown 0.8
   window-open {
     duration-ms 100
