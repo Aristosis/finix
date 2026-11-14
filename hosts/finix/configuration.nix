@@ -21,6 +21,7 @@
     wireplumber
     rtkit
     ly
+    gnome-keyring
 
     (localModules + /niri.nix)
     (localModules + /fonts.nix)
@@ -135,6 +136,7 @@
   programs = {
     wireplumber.enable = true;
 
+    gnome-keyring.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
