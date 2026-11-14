@@ -73,6 +73,9 @@ vim.keymap.set("n", "<leader>_", function()
 end)
 
 require("snacks").setup {
+   image = {
+      enable = true,
+   },
    picker = {
       enabled = true,
       ui_select = true,
