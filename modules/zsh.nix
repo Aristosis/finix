@@ -42,9 +42,8 @@ in
     fi
   '';
 
-  hjem.users.ari.files.".zshrc".text =
-    (builtins.readFile "${self}/config/zsh/zshrc") + ''
-      source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-      source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+  hjem.users.ari.files.".zshrc".text = (builtins.readFile "${self}/config/zsh/zshrc") + ''
+    source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
   '';
 }

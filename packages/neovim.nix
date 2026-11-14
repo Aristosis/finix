@@ -1,6 +1,6 @@
 {
   neovim-unwrapped,
-  fetchFromGitHub
+  fetchFromGitHub,
 }:
 neovim-unwrapped.overrideAttrs (oldAttrs: {
   doCheck = false;

@@ -64,11 +64,16 @@
     xdg.config.files =
       let
         configDirPath = "${self}/config";
-        scanConfigDir = lib.mapAttrs (name: _: {
-          source = "${configDirPath}/${name}";
-        }) (lib.filterAttrs (name: type:
-          type == "directory" && builtins.substring 0 1 name != "_"
-        ) (builtins.readDir configDirPath ));
+        scanConfigDir =
+          lib.mapAttrs
+            (name: _: {
+              source = "${configDirPath}/${name}";
+            })
+            (
+              lib.filterAttrs (name: type: type == "directory" && builtins.substring 0 1 name != "_") (
+                builtins.readDir configDirPath
+              )
+            );
 
         gtkrc = ''
           [Settings]
@@ -76,8 +81,7 @@
         '';
       in
       scanConfigDir
-      //
-      {
+      // {
         "gtk-3.0/settings.ini".text = gtkrc;
         "gtk-4.0/settings.ini".text = gtkrc;
         "user-dirs.dirs".text = ''
