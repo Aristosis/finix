@@ -14,3 +14,11 @@
 ![Tiled Kitty running Neovim showing Nix code, floating Vesktop window](./assets/ss1.png)
 
 ![Comic Mono as Kitty font](./assets/ss2.png)
+
+-----
+
+Huge thanks to:
+- [aanderse](<https://github.com/aanderse>), creator of [Finix](<https://github.com/finix-community/finix>)
+- [Jager](<https://github.com/dmkhitaryan/>)
+- [r0chd](<https://github.com/r0chd/>)
+- [llakala](<https://github.com/llakala/>)
