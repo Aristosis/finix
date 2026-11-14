@@ -4,7 +4,6 @@ vim.pack.add {
    { src = "https://github.com/stevearc/conform.nvim" },
    { src = "https://github.com/nvim-mini/mini.nvim" },
    { src = "https://github.com/neovim/nvim-lspconfig" },
-   { src = "https://github.com/lewis6991/gitsigns.nvim" },
    { src = "https://github.com/vague-theme/vague.nvim" },
    { src = "https://github.com/folke/snacks.nvim" },
    { src = "https://github.com/NeogitOrg/neogit" },
@@ -13,6 +12,7 @@ vim.pack.add {
 require("mini.ai").setup()
 require("mini.move").setup()
 require("mini.align").setup()
+require("mini.diff").setup()
 require("mini.surround").setup()
 require("mini.splitjoin").setup()
 require("mini.icons").setup()
@@ -47,8 +47,6 @@ local function toggle_neogit()
 end
 
 vim.keymap.set("n", "<leader>n", toggle_neogit)
-
-require("gitsigns").setup()
 
 require("conform").setup {
    format_on_save = true,
