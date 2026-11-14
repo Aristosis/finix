@@ -5,29 +5,29 @@
       "type": "Git",
       "fetchType": "git",
       "branch": "main",
-      "revision": "34f8558b268afcdf43b851f3a5b06a92f225d650",
-      "url": "https://github.com/finix-community/finix",
-      "hash": "sha256-jmdk6RmwIPtsnzr/33iXQU7z1iqtb8E0j3aAIFqQbvM=",
-      "lastModified": 1793840127,
+      "revision": "72a38f1f0d911f5384df72031a8164aa67182edd",
+      "url": "https://github.com/aristosis/finixtosis.git",
+      "hash": "sha256-oSGXEXEEHZc2U4DmEI0xLW3wZvV67Q/9xOTrAbge1Bo=",
+      "lastModified": 1794564242,
       "submodules": false
     },
     "hjem": {
       "type": "Git",
       "fetchType": "git",
       "branch": "main",
-      "revision": "4cd448d5b3220b8bbccdb6e7e8185b515f63a776",
+      "revision": "28cec3017cc94842f919f8f294c8b7136216b79b",
       "url": "https://github.com/feel-co/hjem",
-      "hash": "sha256-xj1hq1P05Lekx9tAtyJGSMFw8Z5oK4jh+n7Qr0Q1m5k=",
-      "lastModified": 1792547720,
+      "hash": "sha256-tttNqwFIXsClznNv3uEltACsfBm8xIDo9bPl+BHqYZc=",
+      "lastModified": 1794190356,
       "submodules": false
     },
     "nixpkgs": {
       "type": "Tarball",
       "fetchType": "tarball",
       "origin": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
-      "revision": "02c087f3fe673c9e317f206a627cb6b910336dbe",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1097682.02c087f3fe67/nixexprs.tar.zst?rev=02c087f3fe673c9e317f206a627cb6b910336dbe&lastModified=1792502884",
-      "hash": "sha256-ij8QUxzTOHovLrNOxVRx+RAhGQFOMsJbji0veiatH5k="
+      "revision": "d4f25a3e562008648d45bcf2d70bcc7422cad84e",
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1117658.d4f25a3e5620/nixexprs.tar.zst?rev=d4f25a3e562008648d45bcf2d70bcc7422cad84e&lastModified=1794386569",
+      "hash": "sha256-W60urNAgQVS8bhNWH0bQsYoiagds8m38oTDUjEOM9FE="
     }
   }
 }
