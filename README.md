@@ -8,3 +8,9 @@
 
 >[!WARNING]
 >Using your desktop like this should be a crime, imo. This is a showcase. Turn that opacity up, remove animations, tighten your gaps. Please.
+
+# Screenshots
+
+![Tiled Kitty running Neovim showing Nix code, floating Vesktop window](./assets/ss1.png)
+
+![Comic Mono as Kitty font](./assets/ss2.png)
