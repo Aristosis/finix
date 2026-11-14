@@ -16,6 +16,15 @@ layer-rule {
 }
 
 layer-rule {
+  match namespace="launcher"
+  match at-startup=true
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
+layer-rule {
   match namespace="waybar"
   match at-startup=true
   place-within-backdrop true
