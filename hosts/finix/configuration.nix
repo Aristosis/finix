@@ -24,7 +24,7 @@
 
     (localModules + /niri.nix)
     (localModules + /fonts.nix)
-    (localModules + /packages.nix)
+    (localModules + /programs.nix)
     (localModules + /zsh.nix)
   ];
 
