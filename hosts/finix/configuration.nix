@@ -28,7 +28,7 @@
     (localModules + /zsh.nix)
   ];
 
-  networking.hostName = "finix";
+  networking.hostName = "ari-nuggetbox";
 
   services = {
     polkit.enable = true;

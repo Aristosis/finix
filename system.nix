@@ -11,7 +11,7 @@ let
   self = builtins.toString ./.;
 in
 {
-  desktop = finix.lib.finixSystem {
+  ari-nuggetbox = finix.lib.finixSystem {
     inherit (pkgs) lib;
     specialArgs = {
       inherit
