@@ -32,6 +32,9 @@
   '';
 
   xdg = {
+    mime.enable = true;
+    icons.enable = true;
+    terminal-exec.enable = true;
     portal = {
       portals = with pkgs; [
         xdg-desktop-portal-gnome
