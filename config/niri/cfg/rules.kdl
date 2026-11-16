@@ -10,44 +10,14 @@ gestures {
   }
 }
 
+window-rule {
+  geometry-corner-radius 0
+  clip-to-geometry true
+}
+
 layer-rule {
   match namespace="^wallpaper$"
   place-within-backdrop true
-}
-
-layer-rule {
-  match namespace="launcher"
-  match at-startup=true
-  background-effect {
-    blur true
-    xray false
-  }
-}
-
-layer-rule {
-  match namespace="waybar"
-  match at-startup=true
-  place-within-backdrop true
-  background-effect {
-    blur true
-  }
-}
-
-
-window-rule {
-  geometry-corner-radius 4
-  clip-to-geometry true
-  background-effect {
-    blur true
-  }
-}
-
-window-rule {
-  match is-floating=true
-  geometry-corner-radius 8
-  background-effect {
-    xray false
-  }
 }
 
 cursor {
@@ -64,7 +34,7 @@ layout {
   }
 
   insert-hint {
-    color   "#ffffff"
+    color "#ffffff"
   }
 
   preset-window-heights {
