@@ -13,6 +13,7 @@ window#waybar {
   min-width: 0;
   padding-right: 0.25rem;
   padding-left: 0.25rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
 
 #workspaces button.active {
