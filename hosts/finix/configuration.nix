@@ -167,4 +167,8 @@
       oo7-portal
     ];
   };
+
+  # Needed for stuff to open in firefox :(
+  # Text with gx: https://github.com
+  environment.systemPackages = [ pkgs.xdg-utils ];
 }
