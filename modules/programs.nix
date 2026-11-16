@@ -26,5 +26,6 @@
     mpv
     vesktop
     emacs-pgtk
+    xournalpp
   ];
 }
