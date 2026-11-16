@@ -20,6 +20,7 @@
         };
       };
       packages = with pkgs; [
+        noto-fonts
         monospace
         sansSerif
         nerd-fonts.symbols-only
