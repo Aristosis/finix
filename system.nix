@@ -24,8 +24,8 @@ in
     };
     modules = [
       { nixpkgs.pkgs = pkgs; }
-      ./hosts/default.nix
-      ./hosts/finix/configuration.nix
+      ./hosts
+      ./hosts/ari-nuggetbox
     ];
   };
 }
