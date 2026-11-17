@@ -8,6 +8,8 @@
   ...
 }:
 {
+  networking.hostName = "ari-nuggetbox";
+
   imports = with modules; [
     ./hardware-configuration.nix
     openssh
@@ -29,8 +31,6 @@
     (localModules + /zsh.nix)
     (localModules + /users.nix)
   ];
-
-  networking.hostName = "ari-nuggetbox";
 
   services = {
     polkit.enable = true;
