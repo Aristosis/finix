@@ -15,15 +15,15 @@ in
     inherit (pkgs) lib;
     specialArgs = {
       inherit
-        sources
+        self
         localPkgs
         localModules
-        self
+        sources
+        hjem
         ;
     };
     modules = [
       { nixpkgs.pkgs = pkgs; }
-      hjem.finixModules.default
       ./hosts/default.nix
       ./hosts/finix/configuration.nix
     ];
