@@ -9,12 +9,12 @@ return {
      nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
   };
 
-  outputs = {}:
+  outputs = { nixpkgs, ... }:
   let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = nixpkgs.legacyPackages.\${system};
   in {
-     devShells.default = {
+     devShells.default = pkgs.mkShell {
         packages = with pkgs; [
           $2
         ];

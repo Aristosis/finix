@@ -1,23 +1,21 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
-local function make()
-   local makeprg = vim.fn.expandcmd(vim.bo.makeprg)
-   local errorFormat = vim.bo.errorformat
-   vim.system(
-      { "sh", "-c", makeprg },
-      { text = true },
-      vim.schedule_wrap(function(out)
-         local output = (out.stdout or "") .. (out.stderr or "")
-         vim.fn.setqflist({}, " ", { title = makeprg, lines = vim.split(output, "\n"), efm = errorFormat })
-      end)
-   )
-end
+_G.keymapMakeCmd = ""
 
 vim.keymap.set("n", "<leader>c", function()
-   make()
-   vim.cmd.cwindow()
+   vim.cmd("make " .. _G.keymapMakeCmd)
 end)
+
 vim.keymap.set("n", "<leader>C", function()
+   vim.ui.input({ prompt = ":make args: ", default = _G.keymapMakeCmd }, function(input)
+      if input ~= nil then
+         _G.keymapMakeCmd = input
+         vim.notify(":make args set to: " .. input, vim.log.levels.INFO)
+      end
+   end)
+end)
+
+vim.keymap.set("n", "<leader>x", function()
    vim.ui.input({ prompt = "makeprg: ", default = vim.o.makeprg }, function(input)
       if input and input ~= "" then
          vim.opt_local.makeprg = input
