@@ -3,6 +3,7 @@
   modules,
   pkgs,
   localPkgs,
+  localModules,
   ...
 }:
 {
@@ -11,6 +12,7 @@
     limine
     sudo
     bash
+    (localModules + /man-pages.nix)
   ];
 
   finit.runlevel = 3;
@@ -75,9 +77,6 @@
   };
   security.pam.environment.NIX_PATH.default = "flake:nixpkgs";
   environment = {
-    # man pages
-    pathsToLink = [ "/share/man" ];
-
     variables = {
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
@@ -87,7 +86,6 @@
 
     systemPackages = with pkgs; [
       git
-      man
       iproute2
       iputils
       localPkgs.neovim
