@@ -9,11 +9,6 @@ vim.lsp.enable {
    "org",
 }
 
-_G.DiagState = {
-   virtual_text = true,
-   virtual_lines = false,
-}
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.netrw_banner = 0
@@ -69,7 +64,7 @@ vim.o.pumblend = 30
 vim.o.pummaxwidth = 80
 vim.o.pumheight = 10
 vim.o.signcolumn = "yes"
-vim.o.formatoptions = "jqln"
+vim.o.formatoptions = "jqln" -- this gets overridden!!!! wtff!!!!
 vim.o.smartindent = true
 vim.o.autocomplete = true
 vim.o.lazyredraw = true
