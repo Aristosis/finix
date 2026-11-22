@@ -86,6 +86,7 @@
 
     systemPackages = with pkgs; [
       git
+      binutils
       iproute2
       iputils
       localPkgs.neovim
