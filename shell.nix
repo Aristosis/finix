@@ -7,5 +7,6 @@ pkgs.mkShell {
     nixfmt
     nixfmt-tree
     nixd
+    lon
   ];
 }
