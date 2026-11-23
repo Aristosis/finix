@@ -1,6 +1,16 @@
 {
   "version": "1",
   "sources": {
+    "Quadra": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "QuadraHQ",
+      "repo": "Quadra",
+      "branch": "main",
+      "revision": "91f7badc5f3ec107208a2086de5f9cf38aeca796",
+      "url": "https://github.com/QuadraHQ/Quadra/archive/91f7badc5f3ec107208a2086de5f9cf38aeca796.tar.gz",
+      "hash": "sha256-KQSgZCflNIp2eb9nAbmhA9O9C95lW1q114/M8kx0svs="
+    },
     "finix": {
       "type": "Git",
       "fetchType": "git",
@@ -10,6 +20,16 @@
       "hash": "sha256-oSGXEXEEHZc2U4DmEI0xLW3wZvV67Q/9xOTrAbge1Bo=",
       "lastModified": 1794564242,
       "submodules": false
+    },
+    "flake-compat": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "edolstra",
+      "repo": "flake-compat",
+      "branch": "master",
+      "revision": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
+      "url": "https://github.com/edolstra/flake-compat/archive/5edf11c44bc78a0d334f6334cdaf7d60d732daab.tar.gz",
+      "hash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns="
     },
     "hjem": {
       "type": "Git",

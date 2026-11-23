@@ -1,4 +1,4 @@
-{ pkgs, localPkgs, ... }:
+{ quadra, pkgs, localPkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     localPkgs.fzf-wrapped
@@ -27,5 +27,6 @@
     vesktop
     xournalpp
     pcsx2
+    quadra.packages.${pkgs.stdenv.hostPlatform.system}.quadra
   ];
 }
