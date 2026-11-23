@@ -25,7 +25,7 @@
     syncthing
     mpv
     vesktop
-    emacs-pgtk
     xournalpp
+    pcsx2
   ];
 }
