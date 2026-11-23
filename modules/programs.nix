@@ -6,6 +6,7 @@
     fd
     zoxide
     direnv
+    btop
     nix-direnv
     p7zip
     gnutar
