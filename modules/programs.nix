@@ -20,15 +20,16 @@
     (obs-studio.override {
       cudaSupport = true;
     })
-    heroic
     firefox
     obsidian
     syncthing
     mpv
-    vesktop
     xournalpp
-    pcsx2
     cmus
+    vesktop
+
+    heroic
     quadra.packages.${pkgs.stdenv.hostPlatform.system}.quadra
+    prismlauncher
   ];
 }
