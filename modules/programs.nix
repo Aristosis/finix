@@ -28,6 +28,7 @@
     vesktop
     xournalpp
     pcsx2
+    cmus
     quadra.packages.${pkgs.stdenv.hostPlatform.system}.quadra
   ];
 }
